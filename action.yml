@@ -1,0 +1,20 @@
+name: 'Production Environment Variables'
+description: 'Use one set of environment variables on development branches and another set on the default branch.'
+author: 'Chad Lee'
+
+inputs:
+  keys:
+    description: 'The environment variables to search replace with production values.'
+    required: true
+  defaultBranchName:
+    description: 'The default branch name (defaults to master).'
+    required: false
+    default: 'master'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'sliders'
+  color: 'red'
